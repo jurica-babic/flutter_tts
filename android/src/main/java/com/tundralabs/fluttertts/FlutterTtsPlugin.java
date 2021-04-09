@@ -62,7 +62,7 @@ public class FlutterTtsPlugin implements MethodCallHandler, FlutterPlugin {
     methodChannel.setMethodCallHandler(this);
     handler = new Handler(Looper.getMainLooper());
     bundle = new Bundle();
-    tts = new TextToSpeech(context, onInitListener, googleTtsEngine);
+    tts = new TextToSpeech(context, onInitListener);//, googleTtsEngine);
   }
 
   /** Android Plugin APIs */
