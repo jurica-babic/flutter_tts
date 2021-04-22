@@ -514,7 +514,12 @@ public class FlutterTtsPlugin implements MethodCallHandler, FlutterPlugin {
               new Runnable() {
                 @Override
                 public void run() {
-                  methodResult.success(result);
+                  try {
+                	  methodResult.success(result);
+				} catch (IllegalStateException e) {
+					System.out.println("TTS IllegalStateException, will let pass this time...");
+				}
+                  
                 }
               });
     }
